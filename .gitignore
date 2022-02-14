@@ -6,3 +6,5 @@ Makefile
 .qmake.stash
 *.user
 ui*.h
+/.vs
+/out

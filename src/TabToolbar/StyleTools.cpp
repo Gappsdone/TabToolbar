@@ -85,7 +85,7 @@ static void FillStyle(QString& style, const StyleParams& params)
         const QMetaProperty prop = params.metaObject()->property(i);
         if(QString(prop.name()) == "objectName")
             continue;
-        if(prop.type() == QVariant::Bool)
+        if(prop.type() == QMetaType::Bool)
             continue;
         const QString propStr = QString("%") + prop.name() + "%";
         if(!style.contains(propStr))
