@@ -288,7 +288,13 @@ Page* TabToolbar::AddPage(const QString& pageName)
     QObject::connect(page, &Page::Hiding, this, &TabToolbar::HideTab);
     QObject::connect(page, &Page::Showing, this, &TabToolbar::ShowTab);
     tabBar->addTab(page, pageName);
+    pages.insert( pageName, page );
     return page;
+}
+
+Page* TabToolbar::GetPage(const QString& pageName)
+{
+    return pages.value(pageName, nullptr);
 }
 
 TabToolbar* tt::_FindTabToolbarParent(QWidget& startingWidget)

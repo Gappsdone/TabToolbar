@@ -37,6 +37,7 @@ public:
     virtual ~Page() = default;
 
     Group*   AddGroup(const QString& name);
+    Group*   GetGroup(const QString& name);
     void     hide();
     void     show();
 
@@ -48,6 +49,7 @@ private:
     const int    myIndex;
     QHBoxLayout* innerLayout;
     QWidget*     innerArea;
+    QMap<QString, Group*> groups;
 };
 
 }

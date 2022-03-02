@@ -98,7 +98,13 @@ Group* Page::AddGroup(const QString& name)
         throw std::runtime_error("Page should be constructed inside TabToolbar!");
 
     parentTT->AdjustVerticalSize(grp->height());
+    groups.insert(name, grp);
     return grp;
+}
+
+Group* Page::GetGroup(const QString& name)
+{
+    return groups.value(name, nullptr);
 }
 
 void Page::hide()

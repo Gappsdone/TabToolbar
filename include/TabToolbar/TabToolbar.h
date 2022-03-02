@@ -42,6 +42,7 @@ public:
 
     void     SetSpecialTabEnabled(bool enabled);
     Page*    AddPage(const QString& pageName);
+    Page*    GetPage(const QString& pageName);
     QAction* HideAction();
     void     AddCornerAction(QAction* action);
     void     SetStyle(const QString& styleName);
@@ -86,6 +87,7 @@ private:
     bool           isShown = true;
     QTimer         tempShowTimer;
     std::unique_ptr<StyleParams> style;
+    QMap<QString, Page*> pages;
 
     friend class Page;
 };
